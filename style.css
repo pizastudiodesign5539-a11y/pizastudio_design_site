@@ -1,0 +1,53 @@
+/* Custom Styles */
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #333;
+    background-color: #F9F9F9;
+}
+
+/* Hero Section Overlay */
+.hero-bg {
+    /* Changed to a design/office related image */
+    background-image: linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 51, 102, 0.7)), url('https://images.unsplash.com/photo-1558655146-d09347e0b7a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Work Item Animation */
+.work-item {
+    transition: all 0.4s ease-in-out;
+}
+.work-item.hidden {
+    display: none;
+    opacity: 0;
+    transform: scale(0.9);
+}
+.work-item.show {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hover effects */
+.nav-link {
+    position: relative;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #FF9933;
+    transition: width 0.3s;
+}
+.nav-link:hover::after {
+    width: 100%;
+}
